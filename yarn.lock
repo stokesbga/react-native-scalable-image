@@ -2,6 +2,6 @@
 # yarn lockfile v1
 
 
-react-native-fast-image@^5.0.10:
-  version "5.0.10"
-  resolved "https://registry.npmjs.org/react-native-fast-image/-/react-native-fast-image-5.0.10.tgz#56d229b4a872e4f01bb5ecb7fe465eee34e5238f"
+lodash@^4.17.11:
+  version "4.17.11"
+  resolved "https://registry.npmjs.org/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"

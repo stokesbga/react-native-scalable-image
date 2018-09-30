@@ -28,6 +28,7 @@
   "dependencies": {},
   "devDependencies": {},
   "peerDependencies": {
+    "lodash": "^4.17.11",
     "prop-types": "^15.5.10",
     "react": "^15.4",
     "react-native": "^0.41.2",

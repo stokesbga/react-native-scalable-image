@@ -35,8 +35,6 @@ Specify width or height which may be calculated dynamically like in the example 
 | name          | type      | default                     | description                                                               |
 | ------------- | --------- | --------------------------- | --------------------------------------------------------------------------|
 | `height`      | number    | none                        | Maximum image height                                                      |
-| `width`       | number    | none                        | Maximum image width                                                       |
-| `background`  | boolean   | false                       | Set to true when used as a background                                     |
-| `onPress`     | function  | none                        | onPress callback                                                          |
+| `width`       | number    | none                        | Maximum image width                                                       |                         |                         |
 | `onSize`      | function  | none                        | Is called with ```{ width, height }``` as the arg when image size is calculated |
 

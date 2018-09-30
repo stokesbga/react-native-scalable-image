@@ -1,6 +1,6 @@
 {
   "name": "@outfix/react-native-scalable-image",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "license": "MIT",
   "description": "React Native Image component which scales width or height automatically to keep the aspect ratio",
   "keywords": [

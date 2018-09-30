@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Image, TouchableOpacity, ImageBackground } from 'react-native';
+import { Image } from 'react-native';
 import resolveAssetSource from 'react-native/Libraries/Image/resolveAssetSource';
+import FastImage from 'react-native-fast-image';
 
 export default class ScalableImage extends React.Component {
     constructor(props) {
@@ -9,8 +10,8 @@ export default class ScalableImage extends React.Component {
 
         this.state = {
             size: {
-                width: null,
-                height: null,
+                width: props.invisibleUntilLoad ? 0 : props.width,
+                height: props.invisibleUntilLoad ? 0 : props.height,
             }
         };
 
@@ -32,8 +33,8 @@ export default class ScalableImage extends React.Component {
 
     onProps(props) {
         if (props.source.uri) {
-            const source = props.source.uri ? props.source.uri : props.source;
-            Image.getSize(source, (width, height) => this.adjustSize(width, height, props), console.log);
+            const source = props.source.uri;
+            Image.getSize(source, (width, height) => this.adjustSize(width, height, props));
         }
         else {
             const source = resolveAssetSource(props.source);
@@ -56,15 +57,6 @@ export default class ScalableImage extends React.Component {
             ratio = height / sourceHeight;
         }
 
-        // Deprecated stuff. Added the PR by mistake. You should use only width and height props
-        if (maxWidth && sourceWidth * ratio > maxWidth) {
-            ratio = maxWidth / sourceWidth;
-        }
-
-        if (maxHeight && sourceHeight * ratio > maxHeight) {
-            ratio = maxHeight / sourceHeight;
-        }
-
         if (this.mounted) {
             this.setState({
                 size: {
@@ -76,33 +68,20 @@ export default class ScalableImage extends React.Component {
     }
 
     render() {
-        const ImageComponent = this.props.background
-            ? ImageBackground
-            : Image;
-
-        const image = <ImageComponent { ...this.props } style={[this.props.style, this.state.size]}/>;
-
-        if (!this.props.onPress) {
-            return image;
-        }
-
-        return (
-            <TouchableOpacity onPress={this.props.onPress}>
-                {image}
-            </TouchableOpacity>
-        );
+        return <FastImage { ...this.props } style={[this.props.style, this.state.size]}/>;
     }
 }
 
 ScalableImage.propTypes = {
     width: PropTypes.number,
     height: PropTypes.number,
-    onPress: PropTypes.func,
     onSize: PropTypes.func,
-    background: PropTypes.bool,
+    invisibleUntilLoad: PropTypes.bool,
 };
 
 ScalableImage.defaultProps = {
-    background: false,
-    onSize: size => {}
+    onSize: size => {},
+    width: 100,
+    height: 100,
+    invisibleUntilLoad: false,
 };

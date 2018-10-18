@@ -30,9 +30,9 @@
   "peerDependencies": {
     "lodash": "^4.17.11",
     "prop-types": "^15.5.10",
-    "react": "^15.4",
-    "react-native": "^0.41.2",
-    "react-native-fast-image": "^5.0.10"
+    "react": "^16.6.0",
+    "react-native": "^0.57.3",
+    "react-native-fast-image": "^4.0.0"
   },
   "scripts": {}
 }

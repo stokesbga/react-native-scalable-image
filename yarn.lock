@@ -2,6 +2,3 @@
 # yarn lockfile v1
 
 
-lodash@^4.17.11:
-  version "4.17.11"
-  resolved "https://registry.npmjs.org/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Image } from "react-native";
 import _ from "lodash";
 import resolveAssetSource from "react-native/Libraries/Image/resolveAssetSource";
-import FastImage from "@outfix/react-native-fast-image";
+import FastImage from "react-native-fast-image";
 
 export default class ScalableImage extends React.Component {
   constructor(props) {
